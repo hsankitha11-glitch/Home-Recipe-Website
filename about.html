@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Header Section */
+    header {
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('aa.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 30px;
+      min-height: 100px;
+      position: sticky; /* sticky navbar */
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo h2 {
+      color: #ffffff;
+      margin: 0;
+      font-size: 28px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #f1f1f1;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li.active a {
+      color: #ff7043;
+    }
+
+    /* About Section */
+    .about-section {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .about-section h1 {
+      font-size: 40px;
+      color: #002d75;
+      margin-bottom: 15px;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Back Button */
+    .back-btn {
+      background: #ff7043;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #e64a19;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .about-section {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      .about-section h1 {
+        font-size: 28px;
+      }
+
+      .about-section p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">
+      <h2>The Cozy Kitchen</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="about.html" aria-current="page">About Us</a></li>
+        <li><a href="address.html">Address</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <main>
+    <section class="about-section">
+      <h1>About Us</h1>
+      <p>
+        Welcome to <strong>The Cozy Kitchen</strong>, where every meal feels like home.
+        We believe food is more than just something you eat — it’s an experience, a memory,
+        and a way to bring people together. That’s why we carefully craft every dish using
+        fresh, high-quality ingredients and a touch of love.
+      </p>
+      <p>
+        Our cozy little space is designed to make you feel warm and welcome, whether you’re
+        stopping by for a quick bite, sharing a meal with friends, or enjoying a quiet moment
+        with a cup of coffee. From hearty breakfasts to comforting dinners, our menu is inspired
+        by classic flavors and homemade goodness.
+      </p>
+      <p>
+        At The Cozy Kitchen, it’s not just about food — it’s about creating moments worth savoring.
+      </p>
+
+      <!-- Back Button -->
+      <button type="button" class="back-btn" onclick="goBack()">⬅ Back to Home</button>
+    </section>
+  </main>
+
+  <script>
+    function goBack() {
+      window.location.href = 'index.html'; // change if homepage file name differs
+    }
+  </script>
+
+</body>
+</html>

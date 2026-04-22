@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse delicious homemade recipes from The Cozy Kitchen, including cookies, pizza, salad, desserts, and more." />
+  <title>Recipes - The Cozy Kitchen</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Century Gothic', sans-serif;
+      background: #fff8f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #ff7043;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+    }
+
+    /* Search Bar */
+    .search-bar {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .search-bar input {
+      width: 60%;
+      padding: 12px 15px;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+    }
+
+    main {
+      max-width: 1400px;
+      margin: auto;
+      padding: 20px 30px;
+    }
+
+    .recipes-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    article.recipe-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .recipe-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .recipe-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .recipe-card h3 {
+      margin: 15px 0 10px;
+      font-size: 20px;
+      color: #ff7043;
+    }
+
+    .recipe-card p {
+      font-size: 15px;
+      color: #555;
+      padding: 0 10px 15px;
+    }
+
+    .view-recipe-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 18px;
+      background: #ff7043;
+      color: white;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .view-recipe-btn:hover {
+      background: #e64a19;
+    }
+
+    /* Back to Home Button */
+    .back-home {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .back-home a {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff7043;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .back-home a:hover {
+      background: #e64a19;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍴 Our Special Recipes</h1>
+    <p>Delicious homemade recipes from The Cozy Kitchen</p>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" aria-label="Search recipes" placeholder="Search recipes..." />
+  </div>
+
+  <main>
+    <section class="recipes-container" id="recipeList">
+      <!-- Recipe Cards -->
+      <article class="recipe-card">
+        <img src="recipe_photos/cookies.jpg" alt="Freshly baked cookies with chocolate chips" loading="lazy" />
+        <h3>Freshly Baked Cookies</h3>
+        <p>Soft, chewy, and full of chocolate chips.</p>
+        <a href="details.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="recipe_photos/pizza.jpg" alt="Cheesy pizza with toppings" loading="lazy" />
+        <h3>Cheesy Pizza</h3>
+        <p>Thin crust loaded with cheese and toppings.</p>
+        <a href="details1.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="recipe_photos/burger.jpg" alt="Classic burger with cheese, lettuce, and tomato" loading="lazy" />
+        <h3>Classic Burger</h3>
+        <p>Juicy patty with cheese, lettuce, tomato and house sauce.</p>
+        <a href="details2.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="recipe_photos/juice.jpg" alt="Fresh seasonal fruit juice" loading="lazy" />
+        <h3>Fresh Juice</h3>
+        <p>Refreshing seasonal fruit juices made fresh to order.</p>
+        <a href="details3.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="recipe_photos/biryani.jpg" alt="Spicy chicken or veg biryani with basmati rice" loading="lazy" />
+        <h3>Spicy Biryani</h3>
+        <p>Aromatic basmati rice with rich spices and tender chicken/veg.</p>
+        <a href="details4.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="recipe_photos/icecream.jpg" alt="Bowl of homemade ice cream" loading="lazy" />
+        <h3>Homemade Ice Cream</h3>
+        <p>Creamy, cold, and full of flavor - made with love.</p>
+        <a href="details5.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="recipe_photos/salad.jpg" alt="Healthy salad with greens and fruits" loading="lazy" />
+        <h3>Healthy Salad</h3>
+        <p>Fresh greens, fruits, and nuts tossed with a light dressing.</p>
+        <a href="details6.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="recipe_photos/pasta.jpg" alt="Creamy pasta with herbs and vegetables" loading="lazy" />
+        <h3>Creamy Pasta</h3>
+        <p>Creamy and cheesy pasta cooked with fresh herbs and veggies.</p>
+        <a href="details7.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="recipe_photos/sweetcorn.jpg" alt="Sweet corn with butter and spices" loading="lazy" />
+        <h3>Sweet Corn</h3>
+        <p>Buttery, tangy, and perfectly spiced sweet corn for a light snack.</p>
+        <a href="details8.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="recipe_photos/desserts.jpg" alt="Plate of cakes, brownies, and puddings" loading="lazy" />
+        <h3>Sweet Desserts</h3>
+        <p>Indulge in our freshly prepared cakes, brownies, and puddings.</p>
+        <a href="details9.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+
+      <article class="recipe-card">
+        <img src="recipe_photos/soup.jpg" alt="Bowl of homemade soup" loading="lazy" />
+        <h3>Homemade Soup</h3>
+        <p>Warm, healthy, and comforting - just like mom used to make.</p>
+        <a href="details10.html" class="view-recipe-btn">View Recipe</a>
+      </article>
+    </section>
+
+    <!-- Back to Home Button -->
+    <div class="back-home">
+      <a href="index.html">⬅ Back to Home</a>
+    </div>
+  </main>
+
+  <script>
+    // Simple search filter (checks title & description)
+    const searchInput = document.getElementById('searchInput');
+    const recipes = document.querySelectorAll('.recipe-card');
+
+    searchInput.addEventListener('keyup', function () {
+      const filter = searchInput.value.toLowerCase().trim();
+      recipes.forEach(card => {
+        const title = card.querySelector('h3').innerText.toLowerCase();
+        const description = card.querySelector('p').innerText.toLowerCase();
+        card.style.display = (title.includes(filter) || description.includes(filter)) ? "" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>

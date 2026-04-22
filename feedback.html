@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback - The Cozy Kitchen</title>
+  <style>
+    body {
+      font-family: 'Century Gothic', sans-serif;
+      background-color: #fff8f0;
+      margin: 0;
+    }
+
+    /* Header / Navbar */
+    header {
+      background: #ff7043;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h2 {
+      color: #fff;
+      margin: 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li.active a {
+      color: #333;
+    }
+
+    /* Main Section */
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 70px); /* adjust for header */
+      padding: 20px;
+    }
+    .feedback-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h2 {
+      color: #ff7043;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 12px;
+      text-align: left;
+      font-weight: 600;
+      color: #333;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+      margin-top: 6px;
+    }
+    textarea {
+      resize: none;
+    }
+    button {
+      background: #ff7043;
+      color: white;
+      padding: 12px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e64a19;
+    }
+    .back-btn {
+      background: #757575;
+      margin-top: 12px;
+    }
+    .back-btn:hover {
+      background: #424242;
+    }
+    .success-msg {
+      color: green;
+      font-weight: bold;
+      display: none;
+      margin-top: 15px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <h2>The Cozy Kitchen</h2>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="address.html">Address</a></li>
+        <li class="active"><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Feedback Form -->
+  <main>
+    <div class="feedback-container">
+      <h2>Feedback</h2>
+      <form id="feedbackForm">
+        <label for="name">Name
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+        </label>
+        <label for="email">Email
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+        </label>
+        <label for="rating">Rate Your Experience
+          <select id="rating" name="rating" required>
+            <option value="" disabled selected hidden>Select Rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Average">Average</option>
+            <option value="Poor">Poor</option>
+          </select>
+        </label>
+        <label for="feedback">Feedback
+          <textarea id="feedback" name="feedback" rows="4" placeholder="Your Feedback" required></textarea>
+        </label>
+        <button type="submit">Submit Feedback</button>
+        <p class="success-msg" id="successMsg" aria-live="polite">✅ Thank you! Your feedback has been submitted.</p>
+      </form>
+
+      <!-- Back Button -->
+      <button type="button" class="back-btn" onclick="goBack()">⬅ Back to Home</button>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent page reload
+      const msg = document.getElementById("successMsg");
+      msg.style.display = "block"; // Show success message
+      this.reset(); // Clear form fields
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 3000);
+    });
+
+    function goBack() {
+      window.location.href = "index.html"; // change if homepage file differs
+    }
+  </script>
+
+</body>
+</html>

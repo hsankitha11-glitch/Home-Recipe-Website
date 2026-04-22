@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Now - The Cozy Kitchen</title>
+  <style>
+    body {
+      font-family: 'Century Gothic', sans-serif;
+      background-color: #fff8f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .order-container {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h2 {
+      color: #ff7043;
+      margin-bottom: 15px;
+    }
+    input, select, textarea {
+      width: 100%;
+      margin: 6px 0;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    textarea {
+      resize: none;
+    }
+    button {
+      background: #ff7043;
+      color: white;
+      padding: 12px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #e64a19;
+    }
+    .back-btn {
+      background: #757575;
+      margin-top: 8px;
+    }
+    .back-btn:hover {
+      background: #424242;
+    }
+    .success-msg {
+      color: green;
+      font-weight: bold;
+      display: none;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="order-container">
+    <h2>Place Your Order</h2>
+    <form id="orderForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      
+      <select name="dish" required>
+        <option value="">Select Dish</option>
+        <option>Freshly Baked Cookies</option>
+        <option>Cheesy Pizza</option>
+        <option>Classic Burger</option>
+        <option>Fresh Juice</option>
+        <option>Spicy Briyani</option>
+        <option>Healthy Salad</option>
+        <option>Creamy Pasta</option>
+        <option>Sweet Corn</option>
+        <option>Sweet Desserts</option>
+        <option>Homemade Soup</option>
+      </select>
+      
+      <input type="number" name="quantity" placeholder="Quantity" min="1" required>
+      <textarea name="address" rows="3" placeholder="Delivery Address" required></textarea>
+      
+      <button type="submit">Submit Order</button>
+    </form>
+    
+    <p class="success-msg" id="successMsg">✅ Your order has been successfully submitted!</p>
+    
+    <!-- Back Button -->
+    <button class="back-btn" onclick="goBack()">⬅ Back to Home</button>
+  </div>
+
+  <script>
+    const orderForm = document.getElementById("orderForm");
+    const successMsg = document.getElementById("successMsg");
+
+    orderForm.addEventListener("submit", function(e){
+      e.preventDefault(); // Prevent page reload
+      successMsg.style.display = "block"; // Show success message
+      orderForm.reset(); // Clear the form
+
+      // Auto-hide success message after 3 seconds
+      setTimeout(() => {
+        successMsg.style.display = "none";
+      }, 3000);
+    });
+
+    function goBack() {
+      window.location.href = "index.html"; // Replace with your homepage filename
+    }
+  </script>
+</body>
+</html>

@@ -77,13 +77,6 @@ project-folder/
 
 ---
 
-## 📬 Contact
-
-For any queries or suggestions:  
-📧 Email: your-email@example.com  
-
----
-
 ## 📄 License
 
 This project is developed for educational purposes.
